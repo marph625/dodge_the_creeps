@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size) # prevent player from leaving the screen
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body):
 	hide() # player disappears after being hit
 	hit.emit()
 	# must be deferred as we can't change physics properties on a physics callback
